@@ -1,0 +1,18 @@
+=== Начало ===
+В корне сайта располагается файл .htaccess, который перенаправляет любой вызов
+на файл index.php
+
+=== Создание URL ===
+В URL передаем параметры в формате из массива с использованием функции
+http_build_query
+$urls_parts = array(
+	'module' => 'module_name',
+	'action' => 'action_name',
+	'params' => array(
+		'param_1' => 'par1',
+		'param_2' => 'par2'));
+
+echo http_build_query($urls_parts);
+
+=== Разбор URL ===
+

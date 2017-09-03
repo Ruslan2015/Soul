@@ -7,7 +7,7 @@
 	],
 	"settings": {
 		"xdebug": {
-			"url": "http://soul"
+			"url": "http://soul/index.php"
 		}
 	}
 }
