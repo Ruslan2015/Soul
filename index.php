@@ -24,3 +24,5 @@ var_dump($_SERVER);
 $cur_url = $_SERVER['QUERY_STRING'];
 
 var_dump($cur_url);
+
+echo 'Git';

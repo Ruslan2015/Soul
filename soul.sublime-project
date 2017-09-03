@@ -1,0 +1,13 @@
+{
+	"folders":
+	[
+		{
+			"path": "/C/OSPanel/domains/soul"
+		}
+	],
+	"settings": {
+		"xdebug": {
+			"url": "http://soul"
+		}
+	}
+}
