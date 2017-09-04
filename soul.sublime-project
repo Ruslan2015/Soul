@@ -2,7 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "/C/OSPanel/domains/soul"
+			"path": "/C/OSPanel/domains/soul",
+			"path": "/D/OpenServer/domains/soul"
 		}
 	],
 	"settings": {
