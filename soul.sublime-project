@@ -2,8 +2,9 @@
 	"folders":
 	[
 		{
-			"path": "/C/OSPanel/domains/soul",
-			"path": "/D/OpenServer/domains/soul"
+			"path": "/C/OSPanel/domains/soul",		/* На нетбуке */
+			"path": "/D/OpenServer/domains/soul",	/* На работе */
+			"path": "/F/OSPanel/domains/soul"	/* Дома в спальне */
 		}
 	],
 	"settings": {
