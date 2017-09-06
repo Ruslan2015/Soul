@@ -1,44 +1,31 @@
 <?php
+define('_PLUGSECURE_', true);
 
-// Вызываем модуль для разбора URI
-requre_once 'modules/surl.php';
+require_once ('modules/mainwindow.php');
+require_once ('modules/surl.php');
 
-// Вызываем модуль, указанный в URI и выполняем указанное действие
-// Формируем массив значений $cur_template['vars_templates']
+$MainWindow = new MainWindow;
+$Surl = new Surl;
 
-// Вызываем модуль для загрузки шаблона
+$MainWindow->module = $Surl->params_url['module'];
+$MainWindow->action = $Surl->params_url['action'];
+$MainWindow->template = $Surl->params_url['template'];
+$MainWindow->params = $Surl->params_url['params'];
 
-// Отображаем страницу
+echo $MainWindow->module . '<br>';
+echo $MainWindow->action . '<br>';
+echo $MainWindow->template . '<br>';
 
-/*
-* Конфигурация сайта
-*/
-define('_SITENAME_', 'Soul');
-/*
-* Конец конфигурации сайта
-*/
-
-
-//Подгружаем шаблон
-// Читаем файл в переменную
-if(array_key_exists('template', $urls_parts)) {
-	$strtpl = file_get_contents('./templates/'.$urls_parts['template'].
-		'/'.$urls_parts['template'].'.tpl');	
-}
-else {
-	$strtpl = file_get_contents('./templates/error.tpl');
+foreach($MainWindow->params as $key => $value) {
+	echo $key . ' => ' . $value . '<br>';
 }
 
-// Парсим шаблон на подключаемые части
+$params = array(
+	'par1' => 'p1',
+	'par2' => 'p2');
 
-var_dump($strtpl);
-
-$matches = array();
-$str_reg = 'Начало строки {*HEADER*} конец строки';
-
-
-//preg_match_all('|{*[A-Z]{1,}*}|', $str_reg, $matches);
+$cur_url = $Surl->gen_params_url('m_name', 'm_action', 'm_template', $params);
+echo '<a href=http://soul/index.php?'.$cur_url.'>Нажми</a>';
 
 
 
-var_dump($matches);
