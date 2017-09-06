@@ -42,6 +42,7 @@ class Surl {
 	private function parse_params_url() {		
 		// Убираем часть заголовка если идет отладка
 		$this->cur_url['QUERY_STRING'] = str_replace('XDEBUG_SESSION_START=sublime.xdebug', '', $this->cur_url['QUERY_STRING']);
+                $this->cur_url['QUERY_STRING'] = str_replace('XDEBUG_SESSION_START=netbeans-xdebug', '', $this->cur_url['QUERY_STRING']);
 		$query = rawurldecode($this->cur_url['QUERY_STRING']);
 		//разбираем запрос
 		if($query != ''){			
