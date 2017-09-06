@@ -59,10 +59,8 @@ class Surl {
 					$this->params_url['template'] = $keyval[1];
 				}
 				else if($keyval[0] == 'params') {
-					foreach($this->params_url['params'] as $pvalue) {
-						$pkeyval = explode('=', $pvalue);
-						$this->params_url['params'][$pkeyval[0]] = $pkeyval[1];
-					}
+                                    // TODO: обработать параметры
+                                    echo '';
 				}
 				else {
 					$trace = debug_backtrace();
