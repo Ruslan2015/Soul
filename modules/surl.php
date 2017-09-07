@@ -41,8 +41,8 @@ class Surl {
 
 	private function parse_params_url() {		
 		// Убираем часть заголовка если идет отладка
-		$this->cur_url['QUERY_STRING'] = str_replace('XDEBUG_SESSION_START=sublime.xdebug', '', $this->cur_url['QUERY_STRING']);
-                $this->cur_url['QUERY_STRING'] = str_replace('XDEBUG_SESSION_START=netbeans-xdebug', '', $this->cur_url['QUERY_STRING']);
+		$this->cur_url['QUERY_STRING'] = str_replace('&XDEBUG_SESSION_START=sublime.xdebug', '', $this->cur_url['QUERY_STRING']);
+                $this->cur_url['QUERY_STRING'] = str_replace('&XDEBUG_SESSION_START=netbeans-xdebug', '', $this->cur_url['QUERY_STRING']);
 		$query = rawurldecode($this->cur_url['QUERY_STRING']);
 		//разбираем запрос
 		if($query != ''){			
@@ -58,9 +58,10 @@ class Surl {
 				else if($keyval[0] == 'template') {
 					$this->params_url['template'] = $keyval[1];
 				}
-				else if($keyval[0] == 'params') {
-                                    // TODO: обработать параметры
-                                    echo 'jjjj';
+				else if(preg_match('/params\[[\w\d_]{1,}\]/', $keyval[0])) {                                    
+                                    $keyval[0] = str_replace('params[', '', $keyval[0]);
+                                    $keyval[0] = str_replace(']', '', $keyval[0]);
+                                    $this->params_url['params'][$keyval[0]] = $keyval[1];                                    
 				}
 				else {
 					$trace = debug_backtrace();
