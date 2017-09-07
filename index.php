@@ -1,6 +1,9 @@
 <?php
 define('_PLUGSECURE_', true);
 
+require_once 'vendor/autoload.php';
+
+
 require_once ('modules/mainwindow.php');
 require_once ('modules/surl.php');
 
@@ -30,5 +33,8 @@ $params = array(
 $cur_url = $Surl->gen_params_url('m_name', 'm_action', 'm_template', $params);
 echo '<a href=http://soul/index.php?'.$cur_url.'>Нажми</a>';
 
+$loader = new Twig_Loader_Array(array('index' => 'Hello {{ name }}!'));
+$twig = new Twig_Environment($loader);
 
+echo $twig->render('index', array('name' => 'Ruslan'));
 

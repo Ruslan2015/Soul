@@ -1,0 +1,13 @@
+{
+    "name": "vendor/soul",
+    "description": "Описание проекта Soul.",
+    "authors": [
+        {
+            "name": "Ruslan",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {
+        "twig/twig": "v2.4.3"
+    }
+}
