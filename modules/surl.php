@@ -60,7 +60,7 @@ class Surl {
 				}
 				else if($keyval[0] == 'params') {
                                     // TODO: обработать параметры
-                                    echo '';
+                                    echo 'jjjj';
 				}
 				else {
 					$trace = debug_backtrace();
