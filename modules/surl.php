@@ -7,6 +7,7 @@ if(!defined('_PLUGSECURE_')) {
  * class Surl 
  * 
  * Предназначен для разбора переданного URL
+ * и для генерации нового URL
  */
 class Surl {
 

@@ -4,8 +4,11 @@ define('_PLUGSECURE_', true);
 require_once ('modules/mainwindow.php');
 require_once ('modules/surl.php');
 
+// Создаем хранилище данных
 $MainWindow = new MainWindow;
+// Создаем объект для работы с URL и в конструкторе разбираем полученный URL
 $Surl = new Surl;
+// Создаем объект шаблона и вызываем шаблон, указанный в URL
 
 $MainWindow->module = $Surl->params_url['module'];
 $MainWindow->action = $Surl->params_url['action'];
